@@ -1,0 +1,35 @@
+---
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiMiniSlash } from "react-icons/hi2";
+import ContactFormWrapper from "./contact-form-wrapper";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import TypingIndicator from "./typing-indicator";
+---
+
+<div class="flex flex-col justify-center h-screen gap-10 mt-10">
+  <div class="w-full md:max-w-[55%] flex flex-col gap-2 sm:gap-6">
+    <h1 class="text-3xl sm:text-5xl">Jaden Jansz</h1>
+    <h3 class="text-lg sm:text-2xl flex items-center">
+      <ChevronLeft size={40} />
+      {`Full Stack Developer`}
+      <HiMiniSlash size={45} />
+      <ChevronRight size={40} className="-ml-5" />
+    </h3>
+    <!-- <p class="font-light text-2xl leading-10">
+      Hello! I am a Software Engineer based in Sri Lanka. Love to get my hands
+      dirty building stunning User Interfaces and fullstack applications. Keen
+      to work with experienced people and learn more each day. Wanna build
+      something cool together?
+    </p> -->
+    <TypingIndicator client:load />
+    <ContactFormWrapper client:load />
+  </div>
+  <div class="flex gap-4">
+    <a href="https://www.linkedin.com/in/jaden-jansz/" target="_blank">
+      <FaLinkedin size={40} />
+    </a>
+    <a href="https://github.com/JadenJansz" target="_blank">
+      <FaGithub size={40} />
+    </a>
+  </div>
+</div>

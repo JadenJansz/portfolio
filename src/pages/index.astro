@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/main.astro";
+import Header from "@/components/header.astro";
+import Hero from "@/components/hero.astro";
+import Skills from "@/components/skills.astro";
+import Projects from "@/components/projects.astro";
+import Footer from "@/components/footer.astro";
+import { Separator } from "@/components/ui/separator";
+---
+
+<Layout content={{ title: "Jaden Jansz" }}>
+  <Header />
+  <Hero />
+  <Skills />
+  <Projects />
+  <Separator className="border-3" />
+  <Footer />
+</Layout>

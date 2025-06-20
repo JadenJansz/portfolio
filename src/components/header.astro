@@ -1,0 +1,77 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<header
+  id="main-header"
+  class={`flex fixed top-2 w-[90%] left-1/2 justify-between items-center h-20 bg-[#89cff0] dark:bg-[#1b1e28] z-50 transition-all duration-500 border-3 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] px-5 header-visible`}
+>
+  <img src="/favicon.svg" alt="Astro logo" width="40" height="40" />
+  <nav class="flex items-center gap-10 text-xl">
+    <div class="hidden sm:flex gap-10">
+      <a href="/">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <Button>
+      <a href="https://jaden-jansz-resume.tiiny.site/" target="_blank">
+        View Resume
+      </a>
+    </Button>
+  </nav>
+</header>
+
+<style>
+  .header-visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .header-hidden {
+    transform: translateX(-50%) translateY(-100px);
+  }
+</style>
+
+<script>
+  let lastScrollTop = 0;
+  let scrollThreshold = 5;
+
+  function handleScroll() {
+    const header = document.getElementById("main-header");
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop <= 0) {
+      header?.classList.remove("header-hidden");
+      header?.classList.add("header-visible");
+      return;
+    }
+
+    if (Math.abs(currentScrollTop - lastScrollTop) < scrollThreshold) {
+      return;
+    }
+
+    if (currentScrollTop > lastScrollTop) {
+      header?.classList.remove("header-visible");
+      header?.classList.add("header-hidden");
+    } else {
+      header?.classList.remove("header-hidden");
+      header?.classList.add("header-visible");
+    }
+
+    lastScrollTop = currentScrollTop;
+  }
+
+  let ticking = false;
+
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", requestTick);
+</script>

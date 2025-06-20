@@ -1,0 +1,26 @@
+---
+import { CodeXmlIcon, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+---
+
+<div
+  class="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 my-4 sm:my-8"
+>
+  <div class="flex gap-4">
+    <a href="https://www.linkedin.com/in/jaden-jansz/" target="_blank">
+      <FaLinkedin size={30} />
+    </a>
+    <a href="https://github.com/JadenJansz" target="_blank">
+      <FaGithub size={30} />
+    </a>
+    <a href="mailto:jadenjansz@gmail.com" target="_blank">
+      <Mail size={30} />
+    </a>
+  </div>
+  <div><p>© 2023 Jaden Jansz</p></div>
+  <div class="px-3 py-1 border-2 border-black">
+    <a href="https://astro.build/" target="_blank" class="flex gap-2"
+      ><CodeXmlIcon /> with Astro</a
+    >
+  </div>
+</div>

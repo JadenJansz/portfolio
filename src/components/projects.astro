@@ -1,0 +1,150 @@
+---
+import { SquareArrowOutUpRight } from "lucide-react";
+import { CardTitle } from "./ui/card";
+import { CardContent } from "./ui/card";
+import { CardFooter } from "./ui/card";
+import { CardHeader } from "./ui/card";
+import { Card } from "./ui/card";
+import { Badge } from "@/components/ui/badge";
+import { FaGithub } from "react-icons/fa";
+
+const projects = [
+  {
+    name: "Zerpmon",
+    type: "Career Team Project",
+    description:
+      "The ultimate NFT trading card game! Collect unique digital monsters, engage in epic battles, and trade with players worldwide.",
+    image: "/zerpmon.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "MongoDB",
+      "Blockchain",
+    ],
+    demo: "https://app.zerpmon.world/en",
+  },
+  {
+    name: "Aigent.Run",
+    type: "Career Team Project",
+    description:
+      "No-code deployment and terminal for AI agents, trade and launch tokens on the XRPL & Root Network.",
+    image: "/aigent.png",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "DrizzleORM",
+      "Blockchain",
+    ],
+    demo: "https://aigent.run/en",
+  },
+  {
+    name: "Parking Luton",
+    type: "Side Project",
+    description:
+      "A Dedicated, full-service parking provider designed to make the journey to and from London Luton Airport as smooth and convenient as possible",
+    image: "/parking-luton.png",
+    techStack: ["Next.js", "TypeScript", "TailwindCSS", "DrizzleORM"],
+    demo: "https://parkinglutonairport.co.uk",
+  },
+  {
+    name: "Live Docs",
+    type: "Learning Project",
+    description:
+      "A Google Docs clone that lets users collaboratively edit and share documents in real-time, with a focus on accessibility and user-friendly navigation.",
+    image: "/live-docs.png",
+    techStack: ["React", "Next.js", "TypeScript", "TailwindCSS", "Liveblocks"],
+    repo: "https://github.com/JadenJansz/store-it",
+    demo: "",
+  },
+  {
+    name: "Store It",
+    type: "Learning Project",
+    description:
+      "A storage management and file sharing platform that lets users effortlessly upload, organize, and share files.",
+    image: "/store-it.png",
+    techStack: ["Next.js", "TypeScript", "TailwindCSS", "Appwrite"],
+    repo: "https://github.com/JadenJansz/live-docs",
+    demo: "",
+  },
+  {
+    name: "SaaS Landing Page",
+    type: "Learning Project",
+    description:
+      "Modern UI/UX SaaS website with a sleek design, seamless animations, and overall user experience set a high standard",
+    image: "/saas.png",
+    techStack: ["React", "TailwindCSS"],
+    repo: "https://github.com/JadenJansz/saas-landing-page",
+    demo: "",
+  },
+  {
+    name: "Game Landing Page",
+    type: "Learning Project",
+    description:
+      "A visually captivating website inspired by Zentry, featuring scroll-triggered animations, geometric transitions, and engaging video storytelling.",
+    image: "/saas.png",
+    techStack: ["React", "GSAP", "TailwindCSS"],
+    repo: "https://github.com/JadenJansz/Awwwards",
+    demo: "",
+  },
+];
+---
+
+<div id="projects" class="container mx-auto space-y-10 mt-20 mb-10">
+  <div
+    class="flex mb-10 justify-between items-center h-12 sm:h-20 bg-blue-400 dark:bg-[#1b1e28] z-50 transition-all duration-500 border-3 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] px-5"
+  >
+    <p class="text-center text-3xl sm:text-5xl mx-auto font-bold">Pojects</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    {
+      projects.map((project) => (
+        <Card className="relative bg-white transition-all duration-300 hover:scale-[1.03]">
+          <CardHeader>
+            <CardTitle>
+              <p class="text-3xl">{project.name}</p>
+              <p class="text-sm text-gray-500">{project.type}</p>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col items-center gap-4">
+            <p class="font-sans">{project.description}</p>
+            <div class="flex flex-wrap mr-auto gap-2">
+              {project.techStack.map((tech) => (
+                <Badge className="bg-blue-400">{tech}</Badge>
+              ))}
+            </div>
+            <img
+              src={project.image}
+              alt={project.name}
+              width="70"
+              class="absolute right-4 top-4 rounded-md m-auto"
+            />
+          </CardContent>
+          <CardFooter className="flex gap-4 py-0">
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                class="p-2 flex justify-center items-center gap-2 transition-all duration-200 border-3 bg-green-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
+              >
+                <FaGithub size={20} />
+                Code
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                class="p-2 flex justify-center items-center gap-2 transition-all duration-200 border-3 bg-yellow-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
+              >
+                Demo
+                <SquareArrowOutUpRight size={20} />
+              </a>
+            )}
+          </CardFooter>
+        </Card>
+      ))
+    }
+  </div>
+</div>

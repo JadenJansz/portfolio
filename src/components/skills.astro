@@ -1,0 +1,157 @@
+---
+import {
+  SiNextdotjs,
+  SiAstro,
+  SiKotlin,
+  SiJavascript,
+  SiTypescript,
+  SiDrizzle,
+  SiMongodb,
+} from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa6";
+import { FaReact, FaHtml5, FaJava } from "react-icons/fa";
+import { TbBrandReactNative } from "react-icons/tb";
+import { BsAndroid2 } from "react-icons/bs";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { GrMysql } from "react-icons/gr";
+
+const languages = [
+  {
+    name: "Html",
+    icon: FaHtml5,
+    color: "#E44D25",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#F6E01A",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3078C7",
+  },
+  {
+    name: "Java",
+    icon: FaJava,
+    color: "#494D65",
+  },
+  {
+    name: "Kotlin",
+    icon: SiKotlin,
+    color: "#9A38F2",
+  },
+];
+
+const frameworks = [
+  {
+    name: "ReactJs",
+    icon: FaReact,
+    color: "#129FCA",
+  },
+  {
+    name: "NextJs",
+    icon: SiNextdotjs,
+    color: "#000001",
+  },
+  {
+    name: "Astro",
+    icon: SiAstro,
+    color: "#494D65",
+  },
+  {
+    name: "React Native",
+    icon: TbBrandReactNative,
+    color: "#129FCA",
+  },
+  {
+    name: "Android",
+    icon: BsAndroid2,
+    color: "#78C259",
+  },
+];
+
+const backends = [
+  {
+    name: "NodeJs",
+    icon: FaNodeJs,
+    color: "#3C873A",
+  },
+  {
+    name: "PostgreSQL",
+    icon: BiLogoPostgresql,
+    color: "#316790",
+  },
+  {
+    name: "MySQL",
+    icon: GrMysql,
+    color: "#057492",
+  },
+  {
+    name: "DrizzleORM",
+    icon: SiDrizzle,
+    color: "#C5F74E",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#179152",
+  },
+];
+---
+
+<div id="skills" class="container mx-auto space-y-10">
+  <div
+    class="flex mb-10 justify-between items-center h-12 sm:h-20 bg-blue-400 dark:bg-[#1b1e28] z-50 transition-all duration-500 border-3 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] px-5"
+  >
+    <p class="text-center text-3xl sm:text-5xl mx-auto font-bold">Skills</p>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h3 class="text-2xl sm:text-3xl font-bold">Languages</h3>
+    <div class="flex flex-wrap gap-3 sm:gap-10">
+      {
+        languages.map((language) => (
+          <div class="flex flex-col justify-center items-center min-w-[100px] sm:min-w-[110px] gap-2 transition-all duration-300 border-3 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md py-2 px-4 size-fit">
+            <language.icon
+              className="size-10 sm:size-12"
+              color={language.color}
+            />
+            <p class="font-sans text-xs sm:text-sm">{language.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h3 class="text-2xl sm:text-3xl font-bold">Frameworks</h3>
+    <div class="flex flex-wrap gap-3 sm:gap-10">
+      {
+        frameworks.map((framework) => (
+          <div class="flex flex-col justify-center items-center min-w-[100px] sm:min-w-[110px] gap-2 transition-all duration-300 border-3 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md py-2 px-4 size-fit">
+            <framework.icon
+              className="size-10 sm:size-12"
+              color={framework.color}
+            />
+            <p class="font-sans text-xs sm:text-sm">{framework.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h3 class="text-2xl sm:text-3xl font-bold">Backend</h3>
+    <div class="flex flex-wrap gap-3 sm:gap-10">
+      {
+        backends.map((backend) => (
+          <div class="flex flex-col justify-center items-center min-w-[100px] sm:min-w-[110px] gap-2 transition-all duration-300 border-3 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md py-2 px-4 size-fit">
+            <backend.icon
+              className="size-10 sm:size-12"
+              color={backend.color}
+            />
+            <p class="font-sans text-xs sm:text-sm">{backend.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

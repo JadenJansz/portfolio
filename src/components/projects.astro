@@ -100,7 +100,7 @@ const projects = [
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
     {
       projects.map((project) => (
-        <Card className="relative bg-white transition-all duration-300 hover:scale-[1.03]">
+        <Card className="relative bg-white dark:bg-gray-800 transition-all duration-300 hover:scale-[1.03]">
           <CardHeader>
             <CardTitle>
               <p class="text-3xl">{project.name}</p>
@@ -126,7 +126,7 @@ const projects = [
               <a
                 href={project.repo}
                 target="_blank"
-                class="p-2 flex justify-center items-center gap-2 transition-all duration-200 border-3 bg-green-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
+                class="p-2 flex justify-center items-center gap-2 dark:text-black transition-all duration-200 border-3 bg-green-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
               >
                 <FaGithub size={20} />
                 Code
@@ -136,10 +136,10 @@ const projects = [
               <a
                 href={project.demo}
                 target="_blank"
-                class="p-2 flex justify-center items-center gap-2 transition-all duration-200 border-3 bg-yellow-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
+                class="p-2 flex justify-center items-center gap-2 dark:text-black transition-all duration-200 border-3 bg-yellow-300 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none rounded-md"
               >
-                Demo
-                <SquareArrowOutUpRight size={20} />
+                Live
+                <SquareArrowOutUpRight size={18} />
               </a>
             )}
           </CardFooter>

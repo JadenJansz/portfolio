@@ -1,0 +1,150 @@
+---
+import {
+  SchoolIcon,
+  BriefcaseBusinessIcon,
+  GraduationCapIcon,
+  Calendar,
+} from "lucide-react";
+import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
+
+const items = [
+  {
+    date: "April 2025 - present",
+    title: "Associate Software Engineer",
+    description: "LiveRoom (Pvt) Ltd, Nugegoda",
+    icon: BriefcaseBusinessIcon,
+    color: "bg-blue-400",
+    status: "in-progress",
+  },
+  {
+    date: "Sept 2023 - Mar 2025",
+    title: "Junior Software Engineer",
+    description: "LiveRoom (Pvt) Ltd, Nugegoda",
+    icon: BriefcaseBusinessIcon,
+    color: "bg-blue-400",
+  },
+  {
+    date: "Aug 2022 - Aug 2023",
+    title: "Intern Software Engineer",
+    description: "LiveRoom (Pvt) Ltd, Nugegoda",
+    icon: BriefcaseBusinessIcon,
+    color: "bg-blue-400",
+  },
+  {
+    date: "2020 - 2025",
+    title: "Bsc. (Hons) in Computing",
+    description: "Coventry University",
+    icon: GraduationCapIcon,
+    subDescription:
+      "Successfully Completed with First Class Honors and Distinction",
+    color: "bg-red-400",
+  },
+  {
+    date: "2006 - 2019",
+    title: "Wesley College",
+    description: "Colombo 09",
+    icon: SchoolIcon,
+    subDescription:
+      "Successfully Passed G.C.E Ordinary Level and Advanced Level",
+    color: "bg-red-400",
+  },
+];
+---
+
+<div id="timeline" class="container mx-auto space-y-10 my-5">
+  <div
+    class="flex mb-10 justify-between items-center h-12 sm:h-20 bg-blue-400 dark:bg-[#1b1e28] z-50 transition-all duration-500 border-3 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] px-5"
+  >
+    <p class="text-center text-3xl sm:text-5xl mx-auto font-bold">Timeline</p>
+  </div>
+  <div class="hidden sm:block relative w-full my-10">
+    <div
+      class="absolute left-1/2 transform -translate-x-1/2 w-1 mt-5 bg-gray-300 h-full"
+    >
+    </div>
+    {
+      items.map((item, index) => (
+        <div class="relative flex items-center mb-16 last:mb-0">
+          <div class={`w-1/2 pr-8 text-right`}>
+            <Badge className="text-xs sm:text-sm bg-blue-200 py-2">
+              <div class="flex items-center gap-2">
+                <Calendar size={20} />
+                {item.date}
+              </div>
+            </Badge>
+          </div>
+          <div
+            class={cn(
+              `relative flex flex-col items-center rounded-full ${item.color} p-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`
+            )}
+          >
+            <item.icon className="text-black" />
+          </div>
+          <div class="w-1/2 pl-8">
+            <p
+              class={cn(
+                "flex flex-col mr-auto py-2 px-5 w-fit border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-lg",
+                item.status
+                  ? "bg-green-300 dark:bg-green-600"
+                  : "bg-yellow-300/80 dark:bg-yellow-600"
+              )}
+            >
+              <span class="font-bold text-sm md:text-lg">{item.title}</span>
+              <span class="text-xs sm:text-sm font-sans">
+                {item.description}
+              </span>
+              <span class="text-xs sm:text-sm text-gray-700 mt-3">
+                {item.subDescription}
+              </span>
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="sm:hidden relative w-full mt-10 mb-20">
+    <div class="absolute left-7 w-1 mt-7 bg-gray-300 h-full"></div>
+    {
+      items.map((item, index) => (
+        <div class="relative flex items-center mb-16 last:mb-0">
+          <div
+            class={cn(
+              `relative flex flex-col items-center rounded-full ${item.color} p-4 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`
+            )}
+          >
+            <item.icon className="text-black" />
+          </div>
+          <div class="flex flex-col gap-2 ml-5 w-full">
+            <div>
+              <Badge className="text-xs sm:text-sm bg-blue-200 py-2">
+                <div class="flex items-center gap-2">
+                  <Calendar size={20} />
+                  {item.date}
+                </div>
+              </Badge>
+            </div>
+            <div>
+              <p
+                class={cn(
+                  "flex flex-col mr-auto py-2 px-5 w-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-lg",
+                  item.status
+                    ? "bg-green-300 dark:bg-green-600"
+                    : "bg-yellow-300/80 dark:bg-yellow-600"
+                )}
+              >
+                <span class="font-bold text-base md:text-lg">{item.title}</span>
+                <span class="text-xs sm:text-sm font-sans">
+                  {item.description}
+                </span>
+                <span class="text-xs sm:text-sm text-gray-700 mt-3">
+                  {item.subDescription}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

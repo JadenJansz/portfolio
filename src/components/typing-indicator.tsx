@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 
 const description =
-  "Hello! I am a Software Engineer based in Sri Lanka. Love to get my hands dirty building stunning User Interfaces and fullstack applications. Keen to work with experienced people and learn more each day. Wanna build something cool together?";
+  "Hello! I am a Software Engineer based in Sri Lanka. Love to get my hands dirty building stunning User Interfaces and fullstack applications. Keen to work with experienced people and learn more each day. Wanna build something cool together ?";
 
 const sequence = description.split(" ").map((_, i) =>
   description

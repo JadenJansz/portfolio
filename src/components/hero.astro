@@ -6,24 +6,37 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import TypingIndicator from "./typing-indicator";
 ---
 
-<div class="flex flex-col justify-center h-screen gap-10 mt-10">
-  <div class="w-full md:max-w-[55%] flex flex-col gap-2 sm:gap-6">
-    <h1 class="text-3xl sm:text-5xl">Jaden Jansz</h1>
-    <h3 class="text-lg sm:text-2xl flex items-center">
-      <ChevronLeft size={40} />
-      {`Full Stack Developer`}
-      <HiMiniSlash size={45} />
-      <ChevronRight size={40} className="-ml-5" />
-    </h3>
-    <TypingIndicator client:load />
-    <ContactFormWrapper client:load />
+<div
+  class="flex flex-col sm:flex-row justify-between items-center h-screen gap-10 my-28 sm:mt-10"
+>
+  <div
+    class="w-full order-last sm:order-1 md:max-w-[55%] flex flex-col gap-5 sm:gap-10"
+  >
+    <div class="flex flex-col gap-2 sm:gap-4">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl">Jaden Jansz</h1>
+      <h3 class="text-lg sm:text-xl lg:text-2xl flex items-center">
+        <ChevronLeft size={40} />
+        {`Full Stack Developer`}
+        <HiMiniSlash size={45} />
+        <ChevronRight size={40} className="-ml-5" />
+      </h3>
+      <TypingIndicator client:load />
+      <ContactFormWrapper client:load />
+    </div>
+    <div class="flex gap-4 max-sm:mx-auto">
+      <a href="https://www.linkedin.com/in/jaden-jansz/" target="_blank">
+        <FaLinkedin size={40} />
+      </a>
+      <a href="https://github.com/JadenJansz" target="_blank">
+        <FaGithub size={40} />
+      </a>
+    </div>
   </div>
-  <div class="flex gap-4 max-sm:mx-auto">
-    <a href="https://www.linkedin.com/in/jaden-jansz/" target="_blank">
-      <FaLinkedin size={40} />
-    </a>
-    <a href="https://github.com/JadenJansz" target="_blank">
-      <FaGithub size={40} />
-    </a>
+  <div class="w-full order-1 flex justify-center items-center">
+    <img
+      src="/profile.jpeg"
+      class="object-cover rounded-2xl w-[250px] h-[250px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px]"
+      alt="jadenjansz"
+    />
   </div>
 </div>

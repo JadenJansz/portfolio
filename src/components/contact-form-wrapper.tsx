@@ -8,7 +8,7 @@ export default function ContactFormWrapper() {
   return (
     <>
       <Button
-        className="max-sm:mt-5 max-sm:mx-auto w-[200px] sm:h-[50px] text-xl"
+        className="sm:mt-5 max-sm:mx-auto w-[200px] sm:h-[50px] text-xl"
         onClick={() => setIsContactFormOpen(true)}
       >
         Get In Touch

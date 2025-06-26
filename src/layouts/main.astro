@@ -4,7 +4,7 @@ import "@fontsource-variable/space-grotesk";
 const {
   title,
   description = "Personal Dev Portfolio of Jaden Jansz",
-  image = "https://avatars.githubusercontent.com/u/82871732?v=4",
+  image = "/logo.png",
   url = "https://jadenjansz.vercel.app/",
 } = Astro.props;
 ---
@@ -14,11 +14,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://avatars.githubusercontent.com/u/82871732?v=4"
-    />
+    <link rel="icon" type="image/x-icon" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 

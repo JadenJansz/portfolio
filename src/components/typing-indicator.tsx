@@ -14,7 +14,7 @@ export default function TypingIndicator() {
   return (
     <TypeAnimation
       sequence={sequence}
-      className="font-light text-lg sm:text-xl md:text-2xl leading-8 md:leading-10 min-h-[200px]"
+      className="font-light text-lg md:text-xl lg:text-2xl leading-8 lg:leading-10 min-h-[250px] md:min-h-[200px]"
       speed={70}
     />
   );

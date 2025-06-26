@@ -1,12 +1,10 @@
-# JadenJansz
+# [JadenJansz](https://jadenjansz.vercel.app/)
 
 ![Astro](https://img.shields.io/badge/Astro-000?style=for-the-badge&logo=astro&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-Welcome to my Dev portfolio!
+## About
 
-<!-- ## About
-
-**ronit.io** is my personal website where I share my projects, blog posts, and more. It's built using [Next.js](https://nextjs.org) and styled with [Tailwind CSS](https://tailwindcss.com). The site is designed to be fast, accessible, and easy to maintain. -->
+This is my [Dev portfolio](https://jadenjansz.vercel.app/) where I showcase my skills, projects and career. It's built using [Astro](https://astro.build) and styled with [Tailwind CSS](https://tailwindcss.com). The website is fast, simple and to the point. Make sure to take a look around.
 
 ## Getting Started
 

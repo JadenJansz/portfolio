@@ -2,6 +2,7 @@
 import Analytics from "@vercel/analytics/astro";
 import "../styles/global.css";
 import "@fontsource-variable/space-grotesk";
+import ToasterWithTheme from "@/components/toaster-with-theme";
 const {
   title,
   description = "Personal Dev Portfolio of Jaden Jansz",
@@ -57,5 +58,6 @@ const {
   </head>
   <body class="container px-5 mx-auto font-space">
     <slot />
+    <ToasterWithTheme client:load />
   </body>
 </html>

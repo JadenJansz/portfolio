@@ -4,6 +4,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -15,7 +16,6 @@ import { Loader } from "lucide-react";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -59,11 +59,24 @@ export default function ContactForm({ open, closeAction }: ContactFormProps) {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSending(true);
-    console.log(data);
-    setIsSending(false);
-    // if (result.error) return toast.error(result.error);
 
-    toast.success("Message sent successfully");
+    const result = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!result.ok) {
+      setIsSending(false);
+      toast.error("Message was not sent");
+      return;
+    }
+
+    setIsSending(false);
+    toast.success("Message sent successfully!");
+    closeAction();
   };
 
   const handleDialogClose = (openState: boolean) => {
@@ -75,6 +88,7 @@ export default function ContactForm({ open, closeAction }: ContactFormProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleDialogClose}>
+      <DialogTrigger asChild />
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-4xl">Contact Me</DialogTitle>
